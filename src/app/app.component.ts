@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import {Person} from "./models/person";
 import {NgForOf, NgIf} from "@angular/common";
+import {Animals} from "./models/animals";
 
 
 
@@ -61,6 +62,33 @@ export class AppComponent {
     isProgrammer: true
 
   }
+
+  animalList: Animals[] = [
+    {
+      name: 'Max',
+      type: 'Dog',
+      color: 'Brown',
+      age: 5
+    },
+    {
+      name: 'Whiskers',
+      type: 'Cat',
+      color: 'White',
+      age: 3
+    },
+    {
+      name: 'Charlie',
+      type: 'Parrot',
+      color: 'Green',
+      age: 2
+    },
+    {
+      name: 'Bella',
+      type: 'Horse',
+      color: 'Black',
+      age: 7
+    }
+  ];
 
 
   person: Person[] = [this.person1 , this.person2 , this.person3 ,this.person4, this.person5 ]
