@@ -3,20 +3,23 @@ import { RouterOutlet } from '@angular/router';
 import {Person} from "./models/person";
 import {NgForOf, NgIf} from "@angular/common";
 import {Animals} from "./models/animals";
+import {AnimalListComponent} from "./animal-list/animal-list.component";
 
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NgForOf, NgIf],
+  imports: [RouterOutlet, NgForOf, NgIf, AnimalListComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
+
   title = 'mankirat-singh-Learning-Angular';
   age:number = 18;
   goodProgrammer:boolean = true;
+
   name:string = 'Mankirat';
 
   person1 : Person={
@@ -54,15 +57,6 @@ export class AppComponent {
 
   }
 
-  person5 : Person={
-    firstName : "Tom",
-    lastName : "Henderson",
-    age : 23,
-    profession : "Web Developer",
-    isProgrammer: true
-
-  }
-
   animalList: Animals[] = [
     {
       name: 'Max',
@@ -91,5 +85,5 @@ export class AppComponent {
   ];
 
 
-  person: Person[] = [this.person1 , this.person2 , this.person3 ,this.person4, this.person5 ]
+
 }
