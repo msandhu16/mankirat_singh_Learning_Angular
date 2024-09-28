@@ -1,3 +1,18 @@
-.animal-info{
-  border: 2px solid;
+isEven{
+  background-color: pink;
+
+}
+
+
+
+.isOdd{
+  background-color: teal;
+}
+
+.even{
+  background-color: pink;
+}
+
+.odd{
+  background-color: teal;
 }

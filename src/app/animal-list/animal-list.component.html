@@ -1,13 +1,11 @@
 
 
-<app-animal-list-item>
-  <div *ngFor="let animal of animalInfo">
-    <p>{{ animal.animal.name }}</p>
-    <p>{{ animal.animal.age }}</p>
-    <p>{{ animal.animal.type }}</p>
-    <p>{{ animal.gender }}</p>
+
+  <div *ngFor="let pet of animalInfo;even as isEven;odd as isOdd" [ngClass]={even: isEven, odd: isOdd}>
+    <app-animal-list-item [pet] = "pet"></app-animal-list-item>
+
 
   </div>
 
-</app-animal-list-item>
+
 
