@@ -3,24 +3,28 @@ import {AnimalInfo} from "../app/models/animal-info";
 
 let animalList: Animals[] = [
   {
+    id: 1,
     name: 'Max',
     type: 'Dog',
     color: 'Brown',
     age: 5
   },
   {
+    id: 2,
     name: 'Whiskers',
     type: 'Cat',
     color: 'White',
     age: 3
   },
   {
+    id: 3,
     name: 'Charlie',
     type: 'Parrot',
     color: 'Green',
     age: 2
   },
   {
+    id: 4,
     name: 'Bella',
     type: 'Horse',
     color: 'Black',

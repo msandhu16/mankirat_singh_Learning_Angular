@@ -4,13 +4,16 @@ import {Person} from "./models/person";
 import {NgForOf, NgIf} from "@angular/common";
 import {Animals} from "./models/animals";
 import {AnimalListComponent} from "./animal-list/animal-list.component";
+import {AnimalListItemComponent} from "./animal-list-item/animal-list-item.component";
+import {AnimalInfo} from "./models/animal-info";
+import {AnimalDetailsService} from "./services/animal-details.service";
 
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NgForOf, NgIf, AnimalListComponent],
+  imports: [RouterOutlet, NgForOf, NgIf, AnimalListComponent, AnimalListItemComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -22,67 +25,16 @@ export class AppComponent {
 
   name:string = 'Mankirat';
 
-  person1 : Person={
-    firstName : "Mankirat",
-    lastName : "Singh",
-    age : 18,
-    isProgrammer : true,
-    profession : "student"
 
-}
+  favouritePet: AnimalInfo | undefined;
 
-  person2 : Person={
-    firstName : "Tom",
-    lastName : "Smith",
-    age : 30,
-    profession : "Software Engineer"
-
+  constructor(private animalDetail: AnimalDetailsService ) {
   }
 
-  person3 : Person={
-    firstName : "John",
-    lastName : "Doe",
-    age : 45,
-    isProgrammer : true,
-    profession : "Professor"
+  ngOnIt(){
 
+  this.animalDetail.getAnimalById(3).subscribe(animal => this.favouritePet = animal)
   }
-
-  person4 : Person={
-    firstName : "Joanna",
-    lastName : "Jones",
-    age : 26,
-    profession : "Architect",
-    isProgrammer: false
-
-  }
-
-  animalList: Animals[] = [
-    {
-      name: 'Max',
-      type: 'Dog',
-      color: 'Brown',
-      age: 5
-    },
-    {
-      name: 'Whiskers',
-      type: 'Cat',
-      color: 'White',
-      age: 3
-    },
-    {
-      name: 'Charlie',
-      type: 'Parrot',
-      color: 'Green',
-      age: 2
-    },
-    {
-      name: 'Bella',
-      type: 'Horse',
-      color: 'Black',
-      age: 7
-    }
-  ];
 
 
 
