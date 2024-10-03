@@ -1,6 +1,7 @@
 import {Component, Input} from '@angular/core';
 import {AnimalInfo} from "../models/animal-info";
 import {NgIf} from "@angular/common";
+import {AnimalDetailsService} from "../services/animal-details.service";
 
 @Component({
   selector: 'app-animal-list-item',
@@ -13,5 +14,7 @@ import {NgIf} from "@angular/common";
 })
 export class AnimalListItemComponent {
    @Input() pet? : AnimalInfo;
+
+
 
 }

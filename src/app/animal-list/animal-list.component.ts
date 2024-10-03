@@ -26,7 +26,7 @@ export class AnimalListComponent {
     this.animalDetail.getAnimals().subscribe({
       next: (data:AnimalInfo[]) => this.animalInfo = data,
       error:err => console.error("Error fetching Animals", err),
-      complete:() => console.log("Animal data fetch complete!")
+      complete:() => console.log("Student data fetch complete!")
     })
   }
 }

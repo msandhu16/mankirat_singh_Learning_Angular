@@ -20,22 +20,21 @@ import {AnimalDetailsService} from "./services/animal-details.service";
 export class AppComponent {
 
   title = 'mankirat-singh-Learning-Angular';
-  age:number = 18;
-  goodProgrammer:boolean = true;
+  age: number = 18;
+  goodProgrammer: boolean = true;
+  index: number = 2;
 
-  name:string = 'Mankirat';
-
-
+  name: string = 'Mankirat';
   favouritePet: AnimalInfo | undefined;
 
-  constructor(private animalDetail: AnimalDetailsService ) {
-  }
-
-  ngOnIt(){
-
-  this.animalDetail.getAnimalById(3).subscribe(animal => this.favouritePet = animal)
+  constructor(private animalDetail: AnimalDetailsService) {
   }
 
 
+  ngOnInit() {
 
+    this.animalDetail.getAnimalById(2).subscribe(animal => this.favouritePet = animal)
+
+
+  }
 }

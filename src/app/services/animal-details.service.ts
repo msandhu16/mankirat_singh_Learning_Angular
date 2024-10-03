@@ -23,8 +23,8 @@ export class AnimalDetailsService {
 
   }
 
-  getAnimalById(animalAge: number): Observable<AnimalInfo | undefined> {
-    const animal = this.animals.find(animal => animal.animal.id === animalAge);
+  getAnimalById(animalId: number): Observable<AnimalInfo | undefined> {
+    const animal = this.animals.find(animal => animal.animal.id === animalId);
     return of(animal);
 
 
