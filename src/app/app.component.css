@@ -1,3 +1,21 @@
 .first{
-  background-color: blue;
+  background-color: lightblue;
+}
+
+.nav-bar{
+
+  width: 100%;
+  background-color: #A0D683;
+}
+
+.nav-bar nav{
+  font-size: larger;  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+
+
+}
+
+nav a {
+  text-decoration: none;
 }
