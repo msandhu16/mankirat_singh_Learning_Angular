@@ -10,6 +10,8 @@ export class AnimalDetailsService {
 
   private animals: AnimalInfo[] = animalInfo;
 
+  //Creating CRUD Operations
+
   constructor() {
   }
 
