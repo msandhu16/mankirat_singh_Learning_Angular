@@ -1,0 +1,32 @@
+<!-- modify-student.component.html -->
+<form [formGroup]="animalForm" (ngSubmit)="onSubmit()">
+  <!-- ID Field -->
+  <div class="form-group">
+    <label for="id">ID</label>
+    <input type="number" id="id" formControlName="id" />
+  </div>
+
+  <!-- First Name Field -->
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" id="name" formControlName="name" />
+  </div>
+
+  <!-- Last Name Field -->
+  <div class="form-group">
+    <label for="age">Age</label>
+    <input type="number" id="age" formControlName="age" />
+  </div>
+
+  <!-- Department Field -->
+  <div class="form-group">
+    <label for="color">Department</label>
+    <input type="text" id="color" formControlName="color" />
+  </div>
+
+
+  <!-- Submit Button (Add or Update) -->
+  <button type="submit">Submit</button>
+
+
+</form>
