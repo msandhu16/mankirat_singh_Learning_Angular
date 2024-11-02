@@ -6,7 +6,7 @@
   <h3>Gender:</h3> <p>{{ pet.gender }}</p>
  <h3>Age:</h3> <p> {{ pet.animal.age }} years</p>
   <h3>Img:</h3> <img ngSrc="{{pet.img}}" width="200" height="200">
-  <button [routerLink]="['/modify-animal',pet.animal.id ]">Edit</button>
+  <button [routerLink]="['/modify-animal' ]">Edit</button>
   <button (click)="onDelete()">Delete</button>
 
 

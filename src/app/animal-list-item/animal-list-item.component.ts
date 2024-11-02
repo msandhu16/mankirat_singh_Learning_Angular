@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {AnimalInfo} from "../models/animal-info";
 import {NgIf, NgOptimizedImage} from "@angular/common";
 import {AnimalDetailsService} from "../services/animal-details.service";
@@ -16,7 +16,7 @@ import {AnimalListComponent} from "../animal-list/animal-list.component";
   templateUrl: './animal-list-item.component.html',
   styleUrl: './animal-list-item.component.css'
 })
-export class AnimalListItemComponent {
+export class AnimalListItemComponent implements OnInit{
    @Input() pet? : AnimalInfo;
 
   constructor(private route: ActivatedRoute,
@@ -37,7 +37,7 @@ export class AnimalListItemComponent {
 
   onDelete() {
     if (this.pet) {
-      this.animalService.deleteAnimal(this.pet.animal.id)
+      this.animalService.deleteAnimal(this.pet.animal.id);
       this.router.navigate(["/animals"]);
 
       this.animalList.ngOnInit();

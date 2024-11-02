@@ -43,9 +43,14 @@ export class AnimalDetailsService {
   }
 
   deleteAnimal(animalId: number): Observable<AnimalInfo[]> {
-    this.animals = this.animals.filter(animal => animal.animal.id !== animal.animal.id);
+    this.animals = this.animals.filter(animal => animal.animal.id !== animalId);
     return of(this.animals);
   }
 
+
+
+    generateNewId(): number {
+      return this.animals.length > 0 ? Math.max(...this.animals.map(animal => animal.animal.id)) + 1 : 1;
+    }
 
 }
