@@ -9,7 +9,8 @@ import {ModifyListItemComponent} from "./app/modify-list-item/modify-list-item.c
 
 const routes: Routes = [{path:'', redirectTo: '/students', pathMatch: 'full'}, //default route
   { path: 'animals', component: AnimalListComponent },
-  {path:'modify-animal', component: ModifyListItemComponent},
+  { path: 'modify-animal/:id', component: ModifyListItemComponent },
+  { path: 'modify-animal', component: ModifyListItemComponent },
   {path: '**', component:PageNotFoundComponent}];
 
 bootstrapApplication(AppComponent,{
