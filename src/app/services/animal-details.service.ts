@@ -8,7 +8,7 @@ import {Observable, of} from "rxjs";
 })
 export class AnimalDetailsService {
 
-  private animals: AnimalInfo[] = animalInfo;
+  animals: AnimalInfo[] = animalInfo;
 
   //Creating CRUD Operations
 
@@ -26,14 +26,14 @@ export class AnimalDetailsService {
   }
 
   getAnimalById(animalId: number): Observable<AnimalInfo | undefined> {
-    const animal = this.animals.find(animal => animal.animal.id === animalId);
+    const animal = this.animals.find(animal => animal.id === animalId);
     return of(animal);
 
 
   }
 
   updateAnimal(updatedAnimal: AnimalInfo): Observable<AnimalInfo[]> {
-    const index = this.animals.findIndex(animal => animal.animal.id === updatedAnimal.animal.id);
+    const index = this.animals.findIndex(animal => animal.id === updatedAnimal.id);
     if (index !== -1) {
       this.animals[index] = updatedAnimal;
     }
@@ -42,15 +42,16 @@ export class AnimalDetailsService {
 
   }
 
-  deleteAnimal(animalId: number): Observable<AnimalInfo[]> {
-    this.animals = this.animals.filter(animal => animal.animal.id !== animalId);
+  deleteAnimal(id: number): Observable<AnimalInfo[]> {
+    this.animals = this.animals.filter(animal => animal.id !== id);
     return of(this.animals);
+
   }
 
 
 
     generateNewId(): number {
-      return this.animals.length > 0 ? Math.max(...this.animals.map(animal => animal.animal.id)) + 1 : 1;
+      return this.animals.length > 0 ? Math.max(...this.animals.map(animal => animal.id)) + 1 : 1;
     }
 
 }

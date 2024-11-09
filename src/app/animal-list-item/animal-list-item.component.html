@@ -1,12 +1,12 @@
 <div *ngIf="pet" class="animal-info">
   <h2>Animal's Information</h2>
-  <h3>Id:</h3> <p> {{ pet.animal.id }}</p>
-  <h3>Animal Name</h3> <p> {{ pet.animal.name }}</p>
+  <h3>Id:</h3> <p> {{ pet.id }}</p>
+  <h3>Animal Name</h3> <p> {{ pet.name }}</p>
   <h3>Weight:</h3><p> {{ pet.weight }}</p>
   <h3>Gender:</h3> <p>{{ pet.gender }}</p>
- <h3>Age:</h3> <p> {{ pet.animal.age }} years</p>
-  <h3>Img:</h3> <img ngSrc="{{pet.img}}" width="200" height="200">
-  <button [routerLink]="['/modify-animal' ]">Edit</button>
+ <h3>Age:</h3> <p> {{ pet.age }} years</p>
+<!--  <h3>Img:</h3> <img ngSrc="{{pet.img}}" width="200" height="200">-->
+  <button [routerLink]="['/modify-animal', pet.id]">Edit</button>
   <button (click)="onDelete()">Delete</button>
 
 

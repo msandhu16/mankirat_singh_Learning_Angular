@@ -16,19 +16,19 @@ import {AnimalListComponent} from "../animal-list/animal-list.component";
   templateUrl: './animal-list-item.component.html',
   styleUrl: './animal-list-item.component.css'
 })
-export class AnimalListItemComponent implements OnInit{
-   @Input() pet? : AnimalInfo;
+export class AnimalListItemComponent implements OnInit {
+  @Input() pet?: AnimalInfo;
 
   constructor(private route: ActivatedRoute,
               private animalService: AnimalDetailsService,
-              private router:Router,
-              private animalList:AnimalListComponent) {
+              private router: Router,
+              private animalList: AnimalListComponent) {
   }
 
   ngOnInit() {
     const id = this.route.snapshot.paramMap.get('id');
-    if(id){
-      this.animalService.getAnimalById(Number(id)).subscribe(pet =>{
+    if (id) {
+      this.animalService.getAnimalById(Number(id)).subscribe(pet => {
         this.pet = pet;
       })
     }
@@ -37,12 +37,19 @@ export class AnimalListItemComponent implements OnInit{
 
   onDelete() {
     if (this.pet) {
-      this.animalService.deleteAnimal(this.pet.animal.id);
-      this.router.navigate(["/animals"]);
+      console.log(this.pet.id);
+      console.log(this.animalService.animals);
+      this.animalService.deleteAnimal(this.pet.id).subscribe(
+        (updatedAnimals) => {
 
-      this.animalList.ngOnInit();
+          this.animalList.animalInfo = updatedAnimals;
+        }
+      );
+
+
     }
-  }
 
+
+  }
 
 }

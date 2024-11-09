@@ -1,9 +1,14 @@
 import {Animals} from "./animals";
 
 export interface AnimalInfo {
-    animal: Animals,
+
+    id: number,
+    name: string,
+    type: string,
+    color: string,
+    age: number,
     gender: string,
     weight: number,
-  img : string
+    img?: string
 
 }
