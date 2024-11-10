@@ -1,9 +1,10 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {AnimalInfo} from "../models/animal-info";
-import {NgIf, NgOptimizedImage} from "@angular/common";
+import {DecimalPipe, NgIf, NgOptimizedImage, TitleCasePipe, UpperCasePipe} from "@angular/common";
 import {AnimalDetailsService} from "../services/animal-details.service";
 import {ActivatedRoute, Router, RouterLink} from "@angular/router";
 import {AnimalListComponent} from "../animal-list/animal-list.component";
+import {AnimalGenderPipe} from "../pipes/animal-gender.pipe";
 
 
 @Component({
@@ -12,7 +13,11 @@ import {AnimalListComponent} from "../animal-list/animal-list.component";
   imports: [
     NgIf,
     NgOptimizedImage,
-    RouterLink
+    RouterLink,
+    TitleCasePipe,
+    DecimalPipe,
+    UpperCasePipe,
+    AnimalGenderPipe
   ],
   templateUrl: './animal-list-item.component.html',
   styleUrl: './animal-list-item.component.css'
