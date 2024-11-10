@@ -16,7 +16,7 @@ export class AnimalDetailsService {
   }
 
   getAnimals(): Observable<AnimalInfo[]> {
-    return of(animalInfo);
+    return of(this.animals);
   }
 
   addAnimal(newAnimal: AnimalInfo): Observable<AnimalInfo[]> {
