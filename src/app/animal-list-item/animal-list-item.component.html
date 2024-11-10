@@ -9,6 +9,6 @@
   <button [routerLink]="['/modify-animal', pet.id]">Edit</button>
   <button (click)="onDelete()">Delete</button>
 
-
+  <div *ngIf="error" class="error">{{ error }}</div>
 
 </div>

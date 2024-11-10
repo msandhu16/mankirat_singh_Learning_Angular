@@ -5,6 +5,7 @@ import {AnimalDetailsService} from "../services/animal-details.service";
 import {ActivatedRoute, Router, RouterLink} from "@angular/router";
 import {AnimalListComponent} from "../animal-list/animal-list.component";
 
+
 @Component({
   selector: 'app-animal-list-item',
   standalone: true,
@@ -18,6 +19,8 @@ import {AnimalListComponent} from "../animal-list/animal-list.component";
 })
 export class AnimalListItemComponent implements OnInit{
    @Input() pet? : AnimalInfo;
+  error: string | null = null;
+
 
   constructor(private route: ActivatedRoute,
               private animalService: AnimalDetailsService,
@@ -37,21 +40,18 @@ export class AnimalListItemComponent implements OnInit{
 
   onDelete() {
     if (this.pet) {
-      console.log(this.pet.id);
-      console.log(this.animalService.animals);
-      this.animalService.deleteAnimal(this.pet.id).subscribe({
-        next: (updatedAnimals) => {
-          this.animalList.animalInfo = updatedAnimals;
 
-        },
-        error: (err) => console.error('Error deleting animal', err)
+      this.animalService.deleteAnimal(this.pet.id).subscribe(
 
-      });
+        () => this.router.navigate(['/animals'])
 
-
-
+      );
+      this.animalService.getAnimals().subscribe(
+        (updatedAnimals) => this.animalList.animalInfo = updatedAnimals
+      );
     }
   }
+
 
 
 }

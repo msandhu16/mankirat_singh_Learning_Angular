@@ -2,7 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {Animals} from "../models/animals";
 import {AnimalInfo} from "../models/animal-info";
 import {AnimalListItemComponent} from "../animal-list-item/animal-list-item.component";
-import {NgClass, NgForOf} from "@angular/common";
+import {NgClass, NgForOf, NgIf} from "@angular/common";
 import {AnimalDetailsService} from "../services/animal-details.service";
 
 @Component({
@@ -11,13 +11,16 @@ import {AnimalDetailsService} from "../services/animal-details.service";
   imports: [
     AnimalListItemComponent,
     NgForOf,
-    NgClass
+    NgClass,
+    NgIf
   ],
   templateUrl: './animal-list.component.html',
   styleUrl: './animal-list.component.css'
 })
 export class AnimalListComponent implements OnInit{
   animalInfo: AnimalInfo[] = [];
+  error: string | null = null;
+
 
   constructor(private animalDetail: AnimalDetailsService ) {
   }
@@ -29,4 +32,6 @@ export class AnimalListComponent implements OnInit{
       complete:() => console.log("Animal data fetch complete!")
     })
   }
+
+
 }
