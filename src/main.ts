@@ -21,7 +21,7 @@ bootstrapApplication(AppComponent,{
   providers: [provideRouter(routes),
   provideHttpClient(withInterceptorsFromDi()), // Ensure that HTTP interceptors are properly configured
   provideRouter(routes),
-  importProvidersFrom(HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { delay: 1000 }))] //
+  importProvidersFrom(HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { delay: 100 }))] //
 }).catch((err) => console.error(err));
 
 
