@@ -7,7 +7,7 @@ import {PageNotFoundComponent} from "./app/page-not-found/page-not-found.compone
 import {ModifyListItemComponent} from "./app/modify-list-item/modify-list-item.component";
 
 
-const routes: Routes = [{path:'', redirectTo: '/students', pathMatch: 'full'}, //default route
+const routes: Routes = [{path:'', redirectTo: '/animals', pathMatch: 'full'}, //default route
   { path: 'animals', component: AnimalListComponent },
   { path: 'modify-animal/:id', component: ModifyListItemComponent },
   { path: 'modify-animal', component: ModifyListItemComponent },

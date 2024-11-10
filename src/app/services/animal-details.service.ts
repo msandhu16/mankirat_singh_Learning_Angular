@@ -8,7 +8,7 @@ import {Observable, of} from "rxjs";
 })
 export class AnimalDetailsService {
 
-  private animals: AnimalInfo[] = animalInfo;
+  public  animals: AnimalInfo[] = animalInfo;
 
   //Creating CRUD Operations
 
@@ -42,8 +42,10 @@ export class AnimalDetailsService {
 
   }
 
-  deleteAnimal(id: number): void {
+  deleteAnimal(id: number): Observable<AnimalInfo[]> {
     this.animals = this.animals.filter(animal => animal.id !== id);
+    return of(this.animals);
+
   }
 
 

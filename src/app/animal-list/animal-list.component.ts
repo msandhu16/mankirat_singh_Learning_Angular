@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Animals} from "../models/animals";
 import {AnimalInfo} from "../models/animal-info";
 import {AnimalListItemComponent} from "../animal-list-item/animal-list-item.component";
@@ -16,7 +16,7 @@ import {AnimalDetailsService} from "../services/animal-details.service";
   templateUrl: './animal-list.component.html',
   styleUrl: './animal-list.component.css'
 })
-export class AnimalListComponent {
+export class AnimalListComponent implements OnInit{
   animalInfo: AnimalInfo[] = [];
 
   constructor(private animalDetail: AnimalDetailsService ) {

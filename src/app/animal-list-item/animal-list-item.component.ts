@@ -37,11 +37,19 @@ export class AnimalListItemComponent implements OnInit{
 
   onDelete() {
     if (this.pet) {
-      this.animalService.deleteAnimal(this.pet.id);
       console.log(this.pet.id);
-      this.router.navigate(["/animals"]);
+      console.log(this.animalService.animals);
+      this.animalService.deleteAnimal(this.pet.id).subscribe({
+        next: (updatedAnimals) => {
+          this.animalList.animalInfo = updatedAnimals;
 
-      this.animalList.ngOnInit();
+        },
+        error: (err) => console.error('Error deleting animal', err)
+
+      });
+
+
+
     }
   }
 
