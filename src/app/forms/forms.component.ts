@@ -3,12 +3,14 @@ import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/
 import {AnimalDetailsService} from "../services/animal-details.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {AnimalInfo} from "../models/animal-info";
+import {HoverHighlightDirective} from "../directives/hover-highlight.directive";
 
 @Component({
   selector: 'app-forms',
   standalone: true,
   imports: [
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HoverHighlightDirective
   ],
   templateUrl: './forms.component.html',
   styleUrl: './forms.component.css'

@@ -5,6 +5,7 @@ import {AnimalDetailsService} from "../services/animal-details.service";
 import {ActivatedRoute, Router, RouterLink} from "@angular/router";
 import {AnimalListComponent} from "../animal-list/animal-list.component";
 import {AnimalGenderPipe} from "../pipes/animal-gender.pipe";
+import {HoverHighlightDirective} from "../directives/hover-highlight.directive";
 
 
 @Component({
@@ -17,7 +18,8 @@ import {AnimalGenderPipe} from "../pipes/animal-gender.pipe";
     TitleCasePipe,
     DecimalPipe,
     UpperCasePipe,
-    AnimalGenderPipe
+    AnimalGenderPipe,
+    HoverHighlightDirective
   ],
   templateUrl: './animal-list-item.component.html',
   styleUrl: './animal-list-item.component.css'
