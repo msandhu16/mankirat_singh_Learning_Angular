@@ -4,13 +4,15 @@ import {AnimalDetailsService} from "../services/animal-details.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {AnimalInfo} from "../models/animal-info";
 import {HoverHighlightDirective} from "../directives/hover-highlight.directive";
+import {HighlightOnFocusDirective} from "../directives/highlight-on-focus.directive";
 
 @Component({
   selector: 'app-forms',
   standalone: true,
   imports: [
     ReactiveFormsModule,
-    HoverHighlightDirective
+    HoverHighlightDirective,
+    HighlightOnFocusDirective
   ],
   templateUrl: './forms.component.html',
   styleUrl: './forms.component.css'
