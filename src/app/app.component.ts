@@ -7,13 +7,14 @@ import {AnimalListComponent} from "./animal-list/animal-list.component";
 import {AnimalListItemComponent} from "./animal-list-item/animal-list-item.component";
 import {AnimalInfo} from "./models/animal-info";
 import {AnimalDetailsService} from "./services/animal-details.service";
+import {MatToolbarModule} from "@angular/material/toolbar";
 
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NgForOf, NgIf, AnimalListComponent, AnimalListItemComponent, RouterLink, RouterLinkActive],
+  imports: [RouterOutlet, NgForOf, NgIf, AnimalListComponent, AnimalListItemComponent, RouterLink, RouterLinkActive, MatToolbarModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

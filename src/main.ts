@@ -7,6 +7,10 @@ import {importProvidersFrom} from "@angular/core";
 import {HttpClientInMemoryWebApiModule} from "angular-in-memory-web-api";
 import {InMemoryDataService} from "./app/services/in-memory-data.service";
 import {provideHttpClient, withInterceptorsFromDi} from "@angular/common/http";
+import {provideAnimationsAsync} from "@angular/platform-browser/animations/async";
+import {MatTableModule} from "@angular/material/table";
+import {MatButtonModule} from "@angular/material/button";
+import {MatIconModule} from "@angular/material/icon";
 
 
 const routes: Routes = [{path:'', redirectTo: '/animals', pathMatch: 'full'}, //default route and eagerly routed
@@ -19,7 +23,12 @@ bootstrapApplication(AppComponent,{
   providers: [provideRouter(routes),
   provideHttpClient(withInterceptorsFromDi()), // Ensure that HTTP interceptors are properly configured
   provideRouter(routes),
-  importProvidersFrom(HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { delay: 1000 }))] //
+  importProvidersFrom(HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { delay: 1000 })),
+    provideAnimationsAsync(), // Import providers dynamically
+    MatTableModule,
+    MatButtonModule,
+    MatIconModule,
+  ] //
 }).catch((err) => console.error(err));
 
 

@@ -6,6 +6,8 @@ import {ActivatedRoute, Router, RouterLink} from "@angular/router";
 import {AnimalListComponent} from "../animal-list/animal-list.component";
 import {AnimalGenderPipe} from "../pipes/animal-gender.pipe";
 import {HoverHighlightDirective} from "../directives/hover-highlight.directive";
+import {MatCardModule} from "@angular/material/card";
+import {MatButtonModule} from "@angular/material/button";
 
 
 @Component({
@@ -19,7 +21,9 @@ import {HoverHighlightDirective} from "../directives/hover-highlight.directive";
     DecimalPipe,
     UpperCasePipe,
     AnimalGenderPipe,
-    HoverHighlightDirective
+    HoverHighlightDirective,
+    MatCardModule,
+    MatButtonModule
   ],
   templateUrl: './animal-list-item.component.html',
   styleUrl: './animal-list-item.component.css'

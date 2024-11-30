@@ -4,6 +4,10 @@ import {AnimalInfo} from "../models/animal-info";
 import {AnimalListItemComponent} from "../animal-list-item/animal-list-item.component";
 import {NgClass, NgForOf, NgIf} from "@angular/common";
 import {AnimalDetailsService} from "../services/animal-details.service";
+import {MatCardModule} from "@angular/material/card";
+import {MatTooltipModule} from "@angular/material/tooltip";
+import {MatDialogContent} from "@angular/material/dialog";
+import {MatDividerModule} from "@angular/material/divider";
 
 @Component({
   selector: 'app-animal-list',
@@ -12,7 +16,11 @@ import {AnimalDetailsService} from "../services/animal-details.service";
     AnimalListItemComponent,
     NgForOf,
     NgClass,
-    NgIf
+    NgIf,
+    MatCardModule,
+    MatTooltipModule,
+    MatDialogContent,
+    MatDividerModule
   ],
   templateUrl: './animal-list.component.html',
   styleUrl: './animal-list.component.css'

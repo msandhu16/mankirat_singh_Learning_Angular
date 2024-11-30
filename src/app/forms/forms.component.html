@@ -1,49 +1,69 @@
 
-<form [formGroup]="animalForm" (ngSubmit)="onSubmit()">
+<form [formGroup]="animalForm" (ngSubmit)="onSubmit()" class="mat-form">
   <!-- ID Field -->
   <div class="form-group">
-    <label for="id">ID</label>
-    <input type="number" id="id" formControlName="id" [appHighlightOnFocus]="'lightblue'"/>
+
+    <mat-label >ID</mat-label>
+    <mat-form-field appearance="outline" class="form-field" disabled>
+      <input type="number" id="id" formControlName="id" matTooltip="ID" matInput [appHighlightOnFocus]="'lightblue'"/>
+    </mat-form-field>
   </div>
 
   <!-- First Name Field -->
+
   <div class="form-group">
-    <label for="name">Name</label>
-    <input type="text" id="name" formControlName="name" [appHighlightOnFocus]="'lightblue'"/>
+    <mat-label >Name</mat-label>
+    <mat-form-field appearance="outline" class="form-field" disabled>
+      <input type="text" id="name" formControlName="name" matTooltip="Name" matInput [appHighlightOnFocus]="'lightblue'"/>
+    </mat-form-field>
   </div>
 
   <!-- Last Name Field -->
   <div class="form-group">
-    <label for="age">Age</label>
-    <input type="number" id="age" formControlName="age" [appHighlightOnFocus]="'lightblue'"/>
+    <mat-label >Age</mat-label>
+    <mat-form-field appearance="outline" class="form-field" disabled>
+      <input type="number" id="age" formControlName="age" matTooltip="Age" matInput [appHighlightOnFocus]="'lightblue'"/>
+    </mat-form-field>
   </div>
 
   <!-- Department Field -->
   <div class="form-group">
-    <label for="color">Color</label>
-    <input type="text" id="color" formControlName="color" [appHighlightOnFocus]="'lightblue'"/>
+    <mat-label for="color">Color</mat-label>
+    <mat-form-field appearance="outline" class="form-field" disabled>
+      <input type="text" id="color" formControlName="color" matTooltip="Color" matInput [appHighlightOnFocus]="'lightblue'"/>
+    </mat-form-field>
+
   </div>
 
   <div class="form-group">
-    <label for="weight">Weight</label>
-    <input type="text" id="weight" formControlName="weight" [appHighlightOnFocus]="'lightblue'"/>
+    <mat-label for="weight">Weight</mat-label>
+    <mat-form-field appearance="outline" class="form-field" disabled>
+      <input type="text" id="weight" formControlName="weight" matTooltip="Weight" matInput [appHighlightOnFocus]="'lightblue'"/>
+    </mat-form-field>
+
   </div>
 
   <div class="form-group">
-    <label for="gender">Gender</label>
-    <input type="text" id="gender" formControlName="gender" [appHighlightOnFocus]="'lightblue'"/>
+    <mat-label for="gender">Gender</mat-label>
+    <mat-form-field appearance="outline" class="form-field" disabled>
+      <input type="text" id="gender" formControlName="gender" matTooltip="Gender" matInput [appHighlightOnFocus]="'lightblue'"/>
+    </mat-form-field>
+
   </div>
 
   <div class="form-group">
-    <label for="type">Type</label>
-    <input type="text" id="type" formControlName="type" [appHighlightOnFocus]="'lightblue'"/>
+    <mat-label for="type">Type</mat-label>
+    <mat-form-field appearance="outline" class="form-field" disabled>
+      <input type="text" id="type" formControlName="type" matTooltip="Type" matInput [appHighlightOnFocus]="'lightblue'"/>
+    </mat-form-field>
+
   </div>
 
 
 
 
   <!-- Submit Button (Add or Update) -->
-  <button type="submit" [appHoverHighlight]="'blue'">Submit</button>
+  <button type="submit" [appHoverHighlight]="'blue'" mat-flat-button color="primary">Submit</button>
 
 
 </form>

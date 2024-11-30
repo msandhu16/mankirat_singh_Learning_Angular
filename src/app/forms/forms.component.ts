@@ -5,6 +5,10 @@ import {ActivatedRoute, Router} from "@angular/router";
 import {AnimalInfo} from "../models/animal-info";
 import {HoverHighlightDirective} from "../directives/hover-highlight.directive";
 import {HighlightOnFocusDirective} from "../directives/highlight-on-focus.directive";
+import {MatInputModule} from "@angular/material/input";
+import {MatButtonModule} from "@angular/material/button";
+import {MatLabel} from "@angular/material/form-field";
+import {MatTooltipModule} from "@angular/material/tooltip";
 
 @Component({
   selector: 'app-forms',
@@ -12,7 +16,11 @@ import {HighlightOnFocusDirective} from "../directives/highlight-on-focus.direct
   imports: [
     ReactiveFormsModule,
     HoverHighlightDirective,
-    HighlightOnFocusDirective
+    HighlightOnFocusDirective,
+    MatInputModule,
+    MatButtonModule,
+    MatTooltipModule,
+
   ],
   templateUrl: './forms.component.html',
   styleUrl: './forms.component.css'

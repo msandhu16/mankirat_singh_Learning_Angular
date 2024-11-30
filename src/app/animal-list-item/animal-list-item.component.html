@@ -1,14 +1,18 @@
 <div *ngIf="pet" class="animal-info">
-  <h2>Animal's Information</h2>
-  <h3>Id:</h3> <p> {{ pet.id }}</p>
+  <mat-card class="student-card">
+    <mat-card-header>
+      <mat-card-title>Animal's Information</mat-card-title>
+    </mat-card-header>
+  <h3 class="mat-elevation-z8">Id:</h3> <p> {{ pet.id }}</p>
   <h3>Animal Name</h3> <p> {{ pet.name | titlecase }}</p>
   <h3>Weight:</h3><p> {{ pet.weight | number:'1.1-2' }}</p>
   <h3>Gender:</h3> <p>{{ pet.gender | animalGender }}</p>
  <h3>Age:</h3> <p> {{ pet.age }} years</p>
   <h3>Type:</h3> <p>{{pet.type | uppercase}}</p>
 <!--  <h3>Img:</h3> <img ngSrc="{{pet.img}}" width="200" height="200">-->
-  <button [routerLink]="['/modify-animal', pet.id]" [appHoverHighlight]="'blue'">Edit</button>
-  <button (click)="onDelete()"  [appHoverHighlight]="'blue'">Delete</button>
+  <button [routerLink]="['/modify-animal', pet.id]" [appHoverHighlight]="'blue'" mat-raised-button color="accent">Edit</button>
+  <button (click)="onDelete()"  [appHoverHighlight]="'blue'" mat-raised-button color="primary">Delete</button>
+  </mat-card>
 
   <div *ngIf="error" class="error">{{ error }}</div>
 
