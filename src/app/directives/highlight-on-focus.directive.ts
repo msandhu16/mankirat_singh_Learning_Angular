@@ -16,8 +16,6 @@ export class HighlightOnFocusDirective {
 
     this.el.nativeElement.addEventListener('blur', () => {
       this.highlight('white');
-      this.el.nativeElement.style.borderColor = "revert";
-
     });
   }
 
